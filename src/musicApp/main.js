@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Input from './components/InputDebouncing'
 class MusicApp extends Component {
 
    constructor() {
@@ -28,8 +28,7 @@ class MusicApp extends Component {
                   type="radio" name="opt" id="author" defaultChecked onClick={this.inputCheckedH} />Author
                <input
                   type="radio" name="opt" id="track" onClick={this.inputCheckedH} />Track
-               <input
-                  type='text' placeholder={this.state.placeholder} />
+                  <Input placeholderMessages={this.state.placeholder}/>
             </form>
          </div>
       )
