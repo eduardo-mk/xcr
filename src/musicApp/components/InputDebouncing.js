@@ -11,14 +11,15 @@ class InputDebouncig extends Component {
             name: ""
         }
         this.handler = this.handler.bind(this)
+        this.debounce = debouncingFn((name)=> this.props.checkByArtist(name),500)
     }
     handler(e) {
-        console.log(e.target.value)
         this.setState({
             name: e.target.value
         }, function () {
-            this.props.checkByArtist(this.state.name)
+            this.debounce(this.state.name)
         })
+
     }
     render() {
         console.log(this.props.placeholderMessages)
@@ -27,9 +28,6 @@ class InputDebouncig extends Component {
         )
     }
 }
-
-
-
 export default connect(null, {
         checkByArtist
 })(InputDebouncig)
