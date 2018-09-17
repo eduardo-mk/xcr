@@ -17,10 +17,8 @@ function checkByArtist(artistName) {
             .then(res => {
                 let { data: { results } } = res
                 console.log(results)
-                dispatch({ type: ACTION.CHECK_ARTIST, payload: artistName })
+                dispatch({ type: ACTION.CHECK_ARTIST, payload: results })
             })
-
-
     }
 }
 
